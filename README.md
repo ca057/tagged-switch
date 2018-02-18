@@ -1,5 +1,8 @@
 # `tagged-switch`
 
+[![npm](https://img.shields.io/npm/v/tagged-switch.svg?style=flat-square)](https://www.npmjs.com/package/tagged-switch)
+[![npm](https://img.shields.io/npm/l/tagged-switch.svg?style=flat-square)](https://www.npmjs.com/package/tagged-switch)
+
 Library to experiment using [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) for creating a `switch`/`case` expression returning the respective value.
 
 ## Installation
