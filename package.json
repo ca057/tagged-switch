@@ -1,0 +1,25 @@
+{
+  "name": "tagged-switch",
+  "version": "0.0.1",
+  "description":
+    "Library to experiment using template literals for creating a case-matching statement which returns the respective values.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ca057/tagged-switch.git"
+  },
+  "keywords": ["javascript", "template", "literals", "switch", "case"],
+  "author": {
+    "email": "hallo@christianost.de",
+    "name": "Christian Ost",
+    "url": "https://www.christianost.de"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ca057/tagged-switch/issues"
+  },
+  "homepage": "https://github.com/ca057/tagged-switch#readme"
+}
