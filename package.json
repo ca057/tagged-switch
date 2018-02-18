@@ -1,6 +1,6 @@
 {
   "name": "tagged-switch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description":
     "Library to experiment using template literals for creating a case-matching statement which returns the respective values.",
   "main": "index.js",
