@@ -24,6 +24,11 @@ const currencySymbolToName = taggedSwitch`
 console.log(currencySymbolToName('€')); // Euro
 ```
 
+## TODO
+
+* input validation
+* support of ES5
+
 ## License
 
 Licensed under GNU General Public License v3.0. See [LICENSE](./LICENSE).
