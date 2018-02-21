@@ -27,6 +27,13 @@ const currencySymbolToName = taggedSwitch`
 console.log(currencySymbolToName('€')); // Euro
 ```
 
+The following checks will be performed and throw an error in case one will fail:
+
+* There must be at least one specific case and one default case.
+* The cases must use a `->`-string to separate the key of the case from its value.
+* The default value must be declared by a `_`-string followed by the `->`-string.
+* Keys can only occur once.
+
 ## TODO
 
 * useful tests
