@@ -1,4 +1,4 @@
-const forEachSecond = (callback, start = 0, data) => {
+const forEachSecond = (callback, start, data) => {
   for (let i = start; i < data.length - 1; i += 2) {
     callback(i, data);
   }

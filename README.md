@@ -29,7 +29,7 @@ console.log(currencySymbolToName('€')); // Euro
 
 ## TODO
 
-* input validation
+* useful tests
 * support of ES5
 
 ## License
