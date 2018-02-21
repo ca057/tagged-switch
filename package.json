@@ -5,7 +5,9 @@
     "Library to experiment using template literals for creating a case-matching statement which returns the respective values.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "ava",
+    "test:watch": "ava -w",
+    "prepublish": "yarn run test"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/ca057/tagged-switch/issues"
   },
-  "homepage": "https://github.com/ca057/tagged-switch#readme"
+  "homepage": "https://github.com/ca057/tagged-switch#readme",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
 }

@@ -7,21 +7,28 @@ const forEachSecond = (callback, start = 0, data) => {
 const validateCases = cases => cases.length && cases.length % 2 !== 0;
 
 const validateTemplate = template => {
+  if (template.length < 4) {
+    return false;
+  }
   // every second string should contain "->"
   let everySecondIsArrow = true;
   forEachSecond(
     index => {
+      const nextTemplate = template[index];
+      console.log('nextTemplate', nextTemplate);
       everySecondIsArrow =
-        everySecondIsArrow && template[index].trim().includes('->');
+        everySecondIsArrow &&
+        nextTemplate &&
+        nextTemplate.trim().includes('->');
     },
     1,
     template
   );
 
   // the last but one should contain "_" followed by "->"
-  const lastButOne = template[template.length - 2].trim();
+  const lastButOne = template[template.length - 2];
   const lastButOneIsDefault =
-    lastButOne.indexOf('_') < lastButOne.indexOf('->');
+    (lastButOne && lastButOne.indexOf('_') < lastButOne.indexOf('->')) || false;
 
   return everySecondIsArrow && lastButOneIsDefault;
 };
