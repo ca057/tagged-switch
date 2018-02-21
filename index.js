@@ -15,7 +15,6 @@ const validateTemplate = template => {
   forEachSecond(
     index => {
       const nextTemplate = template[index];
-      console.log('nextTemplate', nextTemplate);
       everySecondIsArrow =
         everySecondIsArrow &&
         nextTemplate &&
@@ -32,6 +31,9 @@ const validateTemplate = template => {
 
   return everySecondIsArrow && lastButOneIsDefault;
 };
+
+// internal helper to pluralize the string case/cases
+const pluralizeCasesString = amount => (amount === 1 ? 'case' : 'cases');
 
 module.exports = (...args) => {
   const [template, ...cases] = args;
@@ -53,6 +55,18 @@ module.exports = (...args) => {
     0,
     cases
   );
+
+  const finalCasesCount = casesMap.size;
+  const passedCasesCount = (cases.length - 1) / 2;
+  if (finalCasesCount !== passedCasesCount) {
+    throw new Error(
+      `Computed ${finalCasesCount} final ${pluralizeCasesString(
+        finalCasesCount
+      )}, but got ${passedCasesCount} ${pluralizeCasesString(
+        passedCasesCount
+      )} passed.`
+    );
+  }
 
   return data =>
     casesMap.has(data) ? casesMap.get(data) : cases[cases.length - 1];
