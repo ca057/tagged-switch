@@ -4,12 +4,9 @@ const forEachSecond = (callback, start, data) => {
   }
 };
 
-const validateCases = cases => cases.length && cases.length % 2 !== 0;
+const validateCases = cases => cases.length >= 3 && cases.length % 2 !== 0;
 
 const validateTemplate = template => {
-  if (template.length < 4) {
-    return false;
-  }
   // every second string should contain "->"
   let everySecondIsArrow = true;
   forEachSecond(
@@ -37,13 +34,13 @@ const pluralizeCasesString = amount => (amount === 1 ? 'case' : 'cases');
 
 module.exports = (...args) => {
   const [template, ...cases] = args;
-  if (!validateTemplate(template)) {
+  if (!validateCases(cases)) {
+    throw new TypeError(
+      'Looks like there is not at least one case definition or the default case is missing.'
+    );
+  } else if (!validateTemplate(template)) {
     throw new TypeError(
       'The syntax declaring the cases seems not to be correct.'
-    );
-  } else if (!validateCases(cases)) {
-    throw new TypeError(
-      'Looks like there are no case definitions or a missing default case.'
     );
   }
 
