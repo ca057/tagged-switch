@@ -41,11 +41,11 @@ test('should throw error if no default case is specified', t => {
   );
 });
 
-test('should throw error if not at least one case and one default case is specified', t => {
+test('should throw error if missing required cases: one specified and one default', t => {
   t.throws(() => ts``);
 });
 
-test('should throw error if there are keys passed twice', t => {
+test('should throw error if any key is passed twice', t => {
   const strKey = 'key';
   const fnKey = () => {};
 

@@ -40,7 +40,7 @@ module.exports = (...args) => {
     );
   } else if (!validateTemplate(template)) {
     throw new TypeError(
-      'The syntax declaring the cases seems not to be correct.'
+      'The syntax declaring the cases seems to be incorrect.'
     );
   }
 
