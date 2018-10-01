@@ -12,7 +12,7 @@ Library to experiment using [template literals](https://developer.mozilla.org/en
 
 ## Usage
 
-The library can be used to create case-matching statements which returns the respective value:
+The library can be used to create case-matching statements which return their respective values:
 
 ```javascript
 import taggedSwitch from 'tagged-switch';
@@ -27,7 +27,7 @@ const currencySymbolToName = taggedSwitch`
 console.log(currencySymbolToName('€')); // Euro
 ```
 
-The following checks will be performed and throw an error in case one will fail:
+The following checks will be performed and will throw an error in the case that one check fails:
 
 * There must be at least one specific case and one default case.
 * The cases must use a `->`-string to separate the key of the case from its value.
